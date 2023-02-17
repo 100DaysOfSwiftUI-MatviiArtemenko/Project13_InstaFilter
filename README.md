@@ -30,7 +30,21 @@ Core Image, CIFilter, CIImage, some of UIKit, onChange()
 ---
 ## &nbsp; 📲 Screenshoot
 
-<!-- add screenshots here!!! -->
+<p align="center">
+  <img 
+  width = 250
+    src="1.png"
+  >
+  <img 
+  width = 250
+    src="2.png"
+  >
+  <img 
+  width = 250
+    src="3.png"
+  >
+</p>
+
 ---
 ##  &nbsp; 🔍 &nbsp; Resources 
 

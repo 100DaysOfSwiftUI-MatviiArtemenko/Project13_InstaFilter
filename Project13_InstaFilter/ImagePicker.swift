@@ -5,8 +5,8 @@
 //  Created by admin on 31.08.2022.
 //
 
-import SwiftUI
 import PhotosUI
+import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
     @Binding var image: UIImage?
@@ -20,15 +20,14 @@ struct ImagePicker: UIViewControllerRepresentable {
         func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
             picker.dismiss(animated: true)
             
-            guard let provider = results.first?.itemProvider else { return }
+            guard let provider = results.first?.itemProvider else {
+                return
+            }
             if provider.canLoadObject(ofClass: UIImage.self) {
                 provider.loadObject(ofClass: UIImage.self) { image, _ in
                     self.parent.image = image as? UIImage
-                    
                 }
-                
             }
-                
         }
     }
     
@@ -40,9 +39,9 @@ struct ImagePicker: UIViewControllerRepresentable {
         picker.delegate = context.coordinator
         return picker
     }
-    func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) {
-        
-    }
+
+    func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) {}
+
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }

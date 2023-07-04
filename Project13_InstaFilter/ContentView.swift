@@ -90,7 +90,8 @@ struct ContentView: View {
                 .padding([.horizontal, .bottom])
                 .navigationTitle("InstaFilter")
                 .onChange(of: inputImage) { _ in loadImage() }
-                .sheet(isPresented: $showingImagePicker) { ImagePicker(image: $inputImage)
+                .sheet(isPresented: $showingImagePicker) {
+                    ImagePicker(image: $inputImage)
                 }
                 .confirmationDialog("Select Filter", isPresented: $showingFilterSheet) {
                     Button("Crystallize") { setNewFilter(CIFilter.crystallize()) }
